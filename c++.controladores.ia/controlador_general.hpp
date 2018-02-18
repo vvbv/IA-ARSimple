@@ -15,6 +15,11 @@
             Controlador_general( std::string ubicacion_entorno, std::string ubicacion_agente );
             ~Controlador_general();
             Controlador_entorno get_controlador_entorno();
+            Controlador_agente get_controlador_agente();
+            Entorno get_entorno();
+            Agente get_agente();
+            void set_entorno( Entorno entorno );
+            void set_agente( Agente agente );
     };
 
 #endif
