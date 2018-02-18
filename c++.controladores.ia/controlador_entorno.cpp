@@ -43,7 +43,7 @@ Entorno Controlador_entorno::cargar_entorno( std::string ubicacion ){
                 }else if( substring == "S" ){
                     substrings_definicion_mapa.push_back( substring );
                     posicion_inicial_tmp[0] = ( i + 1 );
-                    posicion_inicial_tmp[1] = ( substrings_definicion_mapa.size() - 1 );
+                    posicion_inicial_tmp[1] = ( substrings_definicion_mapa.size() );
                 }
             }
         }
