@@ -28,7 +28,7 @@ int Entorno::cargar_entorno(std::string ubicacion){
         std::vector < std::string > substrings_definicion_mapa;
         std::string substring = "";
 
-        substrings_definicion_mapa.push_back( "1" ); // Parte de la frontera
+        substrings_definicion_mapa.push_back( "1" ); // Lado izquierdo de la frontera
         while( ss_linea_mapa >> substring ){
             if( substring.length() > 1 ){
                 if( substring[0] == 'X' ){
@@ -48,7 +48,7 @@ int Entorno::cargar_entorno(std::string ubicacion){
                 }
             }
         }
-        substrings_definicion_mapa.push_back( "1" ); // Parte de la frontera
+        substrings_definicion_mapa.push_back( "1" ); // Lado derecho de la frontera
         mapa_tmp.push_back( substrings_definicion_mapa );
     }
 
