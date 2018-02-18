@@ -77,18 +77,8 @@ Entorno Controlador_entorno::cargar_entorno( std::string ubicacion ){
 }
 
 void Controlador_entorno::pintar_entorno( Entorno entorno ){    
-    int *posicion_inicial = new int[2]();
-    *posicion_inicial = entorno.get_posicion_inicial();
-    std::cout << "Punto de partida: Fila => " << ( posicion_inicial[0] + 1 ); 
-    std::cout << " :: Columna => " << posicion_inicial[1] << std::endl << std::endl;
-    for(int i = 0; i < entorno.get_mapa().size(); i++){
-        for(int j = 0; j < entorno.get_mapa()[i].size(); j++){
-            std::cout << '|' << entorno.get_mapa()[i][j];
-            if( j == ( entorno.get_mapa()[i].size() - 1 ) ){
-                std::cout << '|' << std::endl;;
-            }
-        }
-    }
+    this->entorno = entorno;
+    this->pintar_entorno();
 }
 
 void Controlador_entorno::pintar_entorno(){    
