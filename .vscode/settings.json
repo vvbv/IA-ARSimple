@@ -37,6 +37,9 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "iostream": "cpp",
-        "fstream": "cpp"
-    }
+        "fstream": "cpp",
+        "vector": "cpp",
+        "*.ipp": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

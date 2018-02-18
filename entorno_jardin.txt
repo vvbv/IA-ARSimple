@@ -1,4 +1,7 @@
 # Jardín de juegos
+# Nota*: La frontera no debe ser definida en este archivo,
+#        ya que es creada automáticamente.
+#
 # F 0 1 0 1 X(entorno_nuevo) 1 0 M S
 #
 # F = fila
