@@ -20,6 +20,9 @@
             Agente get_agente();
             void set_entorno( Entorno entorno );
             void set_agente( Agente agente );
+
+            void jugar( Entorno entorno, Agente agente );
+            void jugar();
     };
 
 #endif

@@ -17,12 +17,25 @@ Controlador_agente Controlador_general::get_controlador_agente(){
 Entorno Controlador_general::get_entorno(){
     return this->entorno;
 };
+
 Agente Controlador_general::get_agente(){
     return this->agente;
 };
+
 void Controlador_general::set_entorno( Entorno entorno ){
     this->entorno = entorno;
 };
+
 void Controlador_general::set_agente( Agente agente ){
     this->agente = agente;
+};
+
+void Controlador_general::jugar( Entorno entorno, Agente agente ){
+    this->entorno = entorno;
+    this->agente = agente;
+    this->jugar();
+};
+
+void Controlador_general::jugar(){
+    
 };
