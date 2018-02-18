@@ -1,8 +1,8 @@
-#ifndef MAIN_cpp
-#define MAIN_cpp
+#ifndef MAIN_HPP_
+#define MAIN_HPP_
 
 #include <iostream>
-#include "entorno.cpp"
+#include "c++.modelos.ia/c++.entorno.ia/entorno.cpp"
 
     class Main{
         public:
