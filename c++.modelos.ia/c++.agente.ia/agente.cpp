@@ -30,30 +30,8 @@ void Agente::adicionar_percepcion_accion(
         }else if( condicion_objetivo == "TRUE" ){
             objetivo = 1;
         }
-
-        /* A = Arriba = 0
-           X = Abajo = 1
-           I = Izquierda = 2
-           D = Derecha = 3
-           F = Finaliza = 4
-           H = Ahogado = 5 => Muerto 
-        */
-        if( condicion_accion == "A" ){
-            accion = 0;
-        }else if( condicion_accion == "X" ){
-            accion = 1;
-        }else if( condicion_accion == "I" ){
-            accion = 2;
-        }else if( condicion_accion == "D" ){
-            accion = 3;
-        }else if( condicion_accion == "F" ){
-            accion = 4;
-        }else if( condicion_accion == "H" ){
-            accion = 5;
-        }
         
-        this->percepciones_acciones[arriba][izquierda][abajo][derecha][objetivo][accion] = "x";
-        std::cout << this->percepciones_acciones[0][0][0][0][0][0] << std::endl;
+        this->percepciones_acciones[arriba][izquierda][abajo][derecha][objetivo][0] = condicion_accion;
 }
 
 std::map < int, std::map < int, std::map< int, std::map< int, std::map< int, std::map< int, std::string > > > > > > Agente::get_percepciones(){
