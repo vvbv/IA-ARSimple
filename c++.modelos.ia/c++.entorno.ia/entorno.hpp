@@ -18,10 +18,10 @@
         public:
             Entorno();
             ~Entorno();
-            int cargar_entorno(std::string ubicacion);
-            void pintar_mapa();
-            
-
+            void set_mapa( std::vector< std::vector< std::string > > mapa );
+            void set_posicion_inicial( int *posicion_inicial );
+            std::vector< std::vector< std::string > > get_mapa();
+            int get_posicion_inicial();
     };
 
 #endif
