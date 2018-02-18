@@ -1,6 +1,8 @@
 #include "entorno.hpp"
 
-Entorno::Entorno(){};
+Entorno::Entorno(){
+    this->posicion_inicial = new int[2]();
+};
 Entorno::~Entorno(){};
 
 int Entorno::cargar_entorno(std::string ubicacion){
@@ -18,6 +20,8 @@ int Entorno::cargar_entorno(std::string ubicacion){
     flujo_entrada.close();
 
     std::vector < std::vector < std::string > > mapa_tmp;
+    int *posicion_inicial_tmp = new int[2]();
+
     for(int i = 0; i < lineas.size(); i++){
 
         std::stringstream ss_linea_mapa( lineas[i] );
@@ -37,6 +41,8 @@ int Entorno::cargar_entorno(std::string ubicacion){
                     substrings_definicion_mapa.push_back( substring );
                 }else if( substring == "S" ){
                     substrings_definicion_mapa.push_back( substring );
+                    posicion_inicial_tmp[0] = ( i + 1 );
+                    posicion_inicial_tmp[1] = ( substrings_definicion_mapa.size() - 1 );
                 }else if( substring == "M" ){
                     substrings_definicion_mapa.push_back( substring );
                 }
@@ -57,9 +63,12 @@ int Entorno::cargar_entorno(std::string ubicacion){
     }
     // Frontera inferior
     this->mapa.push_back( frontera_superior_inferior );
+    this->posicion_inicial = posicion_inicial_tmp;
 };
 
 void Entorno::pintar_mapa(){    
+    std::cout << "Punto de partida: Fila => " << (this->posicion_inicial[0]+1); 
+    std::cout << " :: Columna => " << this->posicion_inicial[1] << std::endl << std::endl;
     for(int i = 0; i < this->mapa.size(); i++){
         for(int j = 0; j < this->mapa[i].size(); j++){
             std::cout << '|' << this->mapa[i][j];

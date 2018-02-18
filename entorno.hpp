@@ -13,12 +13,14 @@
 
             std::vector< std::vector< std::string > > mapa; //2D
             std::vector< std::vector< std::vector< std::string > > > mapa3D; // [No implementado]
+            int *posicion_inicial;
 
         public:
             Entorno();
             ~Entorno();
             int cargar_entorno(std::string ubicacion);
             void pintar_mapa();
+            
 
     };
 
