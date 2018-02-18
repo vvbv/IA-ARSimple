@@ -1,0 +1,19 @@
+# Jardín de juegos
+# F 0 1 0 1 X(entorno_nuevo) 1 0 M S
+#
+# F = fila
+# 0 = libre  
+# 1 = bloqueado  
+# X(entorno_nuevo) = carga un nuevo entorno  
+# X(muerte_) = se detiene  
+# X(vida_#) = obtiene +# vida(s) 
+# X(dano_#) = obtiene -# vida(s)   
+# S = spawn de carga/posición inicial  
+# M = objeto 
+#
+# ARSimple 2018
+
+F 0 0 0 0 0 0 0 0
+F 0 1 0 1 0 0 0 0
+F 0 0 1 0 0 0 S 0
+F 0 0 0 0 0 0 0 0

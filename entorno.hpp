@@ -2,14 +2,16 @@
 #define ENTORNO_HPP_
 
     #include <iostream>
+    #include <fstream>
     #include <string>
     #include <vector>
+    #include <sstream>
 
     class Entorno{
 
         private:
 
-            std::vector< std::vector< int > > mapa;
+            std::vector< std::vector< std::string > > mapa;
 
         public:
             Entorno();
