@@ -17,11 +17,14 @@ int Entorno::cargar_entorno(std::string ubicacion){
 
     flujo_entrada.close();
 
+    std::vector < std::vector < std::string > > mapa_tmp;
     for(int i = 0; i < lineas.size(); i++){
 
         std::stringstream ss_linea_mapa( lineas[i] );
         std::vector < std::string > substrings_definicion_mapa;
         std::string substring = "";
+
+        substrings_definicion_mapa.push_back( "1" ); // Parte de la frontera
         while( ss_linea_mapa >> substring ){
             if( substring.length() > 1 ){
                 if( substring[0] == 'X' ){
@@ -39,8 +42,21 @@ int Entorno::cargar_entorno(std::string ubicacion){
                 }
             }
         }
-        this->mapa.push_back( substrings_definicion_mapa );
+        substrings_definicion_mapa.push_back( "1" ); // Parte de la frontera
+        mapa_tmp.push_back( substrings_definicion_mapa );
     }
+
+    // Frontera superior
+    std::vector < std::string > frontera_superior_inferior;
+    for(int i = 0; i < mapa_tmp[0].size(); i++){
+        frontera_superior_inferior.push_back( "1" );
+    }
+    this->mapa.push_back( frontera_superior_inferior );
+    for(int i = 0; i < mapa_tmp.size(); i++){
+        this->mapa.push_back( mapa_tmp[i] );
+    }
+    // Frontera inferior
+    this->mapa.push_back( frontera_superior_inferior );
 };
 
 void Entorno::pintar_mapa(){    

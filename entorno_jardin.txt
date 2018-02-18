@@ -4,10 +4,10 @@
 # F = fila
 # 0 = libre  
 # 1 = bloqueado  
-# X(entorno_nuevo) = carga un nuevo entorno  
-# X(muerte_) = se detiene  
-# X(vida_#) = obtiene +# vida(s) 
-# X(dano_#) = obtiene -# vida(s)   
+# X(entorno_nuevo) = carga un nuevo entorno [No implementado]
+# X(muerte_) = se detiene [No implementado]
+# X(vida_#) = obtiene +# vida(s) [No implementado]
+# X(dano_#) = obtiene -# vida(s) [No implementado]
 # S = spawn de carga/posición inicial  
 # M = objeto 
 #

@@ -11,7 +11,8 @@
 
         private:
 
-            std::vector< std::vector< std::string > > mapa;
+            std::vector< std::vector< std::string > > mapa; //2D
+            std::vector< std::vector< std::vector< std::string > > > mapa3D; // [No implementado]
 
         public:
             Entorno();
