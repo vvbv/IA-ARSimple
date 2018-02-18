@@ -2,7 +2,7 @@
 #define MAIN_HPP_
 
 #include <iostream>
-#include "c++.controladores.ia/controlador_entorno.cpp"
+#include "c++.controladores.ia/controlador_general.cpp"
 
     class Main{
         public:
