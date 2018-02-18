@@ -39,16 +39,12 @@ Entorno Controlador_entorno::cargar_entorno( std::string ubicacion ){
                     substrings_definicion_mapa.push_back( substring );
                 }
             }else{
-                if( substring == "0" ){
+                if( ( substring == "0" ) || ( substring == "1" ) || ( substring == "M" ) ){
                      substrings_definicion_mapa.push_back( substring );
-                }else if( substring == "1" ){
-                    substrings_definicion_mapa.push_back( substring );
                 }else if( substring == "S" ){
                     substrings_definicion_mapa.push_back( substring );
                     posicion_inicial_tmp[0] = ( i + 1 );
                     posicion_inicial_tmp[1] = ( substrings_definicion_mapa.size() - 1 );
-                }else if( substring == "M" ){
-                    substrings_definicion_mapa.push_back( substring );
                 }
             }
         }
