@@ -1,3 +1,7 @@
+#Visual code editor directory
+
+.vscode/*
+
 # Prerequisites
 *.d
 
