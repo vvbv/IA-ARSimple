@@ -76,6 +76,26 @@ void Controlador_entorno::pintar_entorno( Entorno entorno ){
     this->pintar_entorno();
 }
 
+std::vector < std::string > Controlador_entorno::get_informacion_entorno_pos( Entorno entorno, int pos[2] ){
+    this->entorno = entorno;
+    return this->get_informacion_entorno_pos( pos );
+};
+
+std::vector < std::string > Controlador_entorno::get_informacion_entorno_pos( int pos[2] ){
+    std::vector < std::string > informacion;
+    std::string arriba = this->entorno.get_mapa()[ pos[0] - 1 ][ pos[1] ] ;
+    std::string izquierda = this->entorno.get_mapa()[ pos[0] ][ pos[1] -1 ] ;
+    std::string abajo = this->entorno.get_mapa()[ pos[0] + 1 ][ pos[1] ] ;
+    std::string derecha = this->entorno.get_mapa()[ pos[0] ][ pos[1] + 1 ] ;
+    std::string actual = this->entorno.get_mapa()[ pos[0]][ pos[1] ] ;
+    informacion.push_back( arriba );
+    informacion.push_back( izquierda );
+    informacion.push_back( abajo );
+    informacion.push_back( derecha );
+    informacion.push_back( actual );
+    return informacion;
+};
+
 void Controlador_entorno::pintar_entorno(){    
     Entorno entorno = this->entorno;
     std::vector<int> posicion_inicial = entorno.get_posicion_inicial();

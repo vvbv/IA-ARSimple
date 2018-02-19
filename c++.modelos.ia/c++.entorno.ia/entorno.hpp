@@ -19,7 +19,7 @@
             Entorno();
             ~Entorno();
             void set_mapa( std::vector< std::vector< std::string > > mapa );
-            void set_posicion_inicial( int *posicion_inicial );
+            void set_posicion_inicial( int posicion_inicial[2] );
             std::vector< std::vector< std::string > > get_mapa();
             std::vector<int> get_posicion_inicial();
     };

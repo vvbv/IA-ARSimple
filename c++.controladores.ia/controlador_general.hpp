@@ -1,8 +1,10 @@
 #ifndef CONTROLADOR_GENERAL_HPP_
 #define CONTROLADOR_GENERAL_HPP_
 
+    #include <unistd.h>
     #include "controlador_entorno.cpp"
     #include "controlador_agente.cpp"
+    
 
     class Controlador_general{
         private:
@@ -10,6 +12,7 @@
             Agente agente;
             Controlador_entorno c_entorno;
             Controlador_agente c_agente;
+            
 
         public:
             Controlador_general( std::string ubicacion_entorno, std::string ubicacion_agente );
