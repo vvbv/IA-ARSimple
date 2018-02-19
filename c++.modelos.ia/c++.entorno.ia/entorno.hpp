@@ -13,15 +13,15 @@
 
             std::vector< std::vector< std::string > > mapa; //2D
             std::vector< std::vector< std::vector< std::string > > > mapa3D; // [No implementado]
-            int *posicion_inicial;
+            int posicion_inicial[2];
 
         public:
             Entorno();
             ~Entorno();
             void set_mapa( std::vector< std::vector< std::string > > mapa );
-            void set_posicion_inicial( int *posicion_inicial );
+            void set_posicion_inicial( int posicion_inicial[2] );
             std::vector< std::vector< std::string > > get_mapa();
-            int get_posicion_inicial();
+            std::vector<int> get_posicion_inicial();
     };
 
 #endif

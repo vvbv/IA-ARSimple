@@ -9,7 +9,6 @@ Entorno Controlador_entorno::cargar_entorno( std::string ubicacion ){
 
     std::vector< std::vector< std::string > > mapa; //2D
     std::vector< std::vector< std::vector< std::string > > > mapa3D; // [No implementado]
-    int *posicion_inicial = new int[2]();
 
     std::vector < std::string > lineas;
     std::ifstream flujo_entrada( ubicacion.c_str() );
@@ -24,7 +23,7 @@ Entorno Controlador_entorno::cargar_entorno( std::string ubicacion ){
     flujo_entrada.close();
 
     std::vector < std::vector < std::string > > mapa_tmp;
-    int *posicion_inicial_tmp = new int[2]();
+    int posicion_inicial_tmp[2];
 
     for(int i = 0; i < lineas.size(); i++){
 
@@ -44,7 +43,7 @@ Entorno Controlador_entorno::cargar_entorno( std::string ubicacion ){
                 }else if( substring == "S" ){
                     substrings_definicion_mapa.push_back( substring );
                     posicion_inicial_tmp[0] = ( i + 1 );
-                    posicion_inicial_tmp[1] = ( substrings_definicion_mapa.size() - 1 );
+                    posicion_inicial_tmp[1] = ( substrings_definicion_mapa.size() );
                 }
             }
         }
@@ -62,12 +61,12 @@ Entorno Controlador_entorno::cargar_entorno( std::string ubicacion ){
         mapa.push_back( mapa_tmp[i] );
     }
     // Frontera inferior
+    
     mapa.push_back( frontera_superior_inferior );
-    posicion_inicial = posicion_inicial_tmp;
-
+    
     Entorno entorno;
     entorno.set_mapa( mapa );
-    entorno.set_posicion_inicial( posicion_inicial );
+    entorno.set_posicion_inicial( posicion_inicial_tmp );
 
     return entorno;
 }
@@ -77,10 +76,30 @@ void Controlador_entorno::pintar_entorno( Entorno entorno ){
     this->pintar_entorno();
 }
 
+std::vector < std::string > Controlador_entorno::get_informacion_entorno_pos( Entorno entorno, int pos[2] ){
+    this->entorno = entorno;
+    return this->get_informacion_entorno_pos( pos );
+};
+
+std::vector < std::string > Controlador_entorno::get_informacion_entorno_pos( int pos[2] ){
+    std::vector < std::string > informacion;
+    std::string arriba = this->entorno.get_mapa()[ pos[0] - 1 ][ pos[1] ] ;
+    std::string izquierda = this->entorno.get_mapa()[ pos[0] ][ pos[1] -1 ] ;
+    std::string abajo = this->entorno.get_mapa()[ pos[0] + 1 ][ pos[1] ] ;
+    std::string derecha = this->entorno.get_mapa()[ pos[0] ][ pos[1] + 1 ] ;
+    std::string actual = this->entorno.get_mapa()[ pos[0]][ pos[1] ] ;
+    informacion.push_back( arriba );
+    informacion.push_back( izquierda );
+    informacion.push_back( abajo );
+    informacion.push_back( derecha );
+    informacion.push_back( actual );
+    return informacion;
+};
+
 void Controlador_entorno::pintar_entorno(){    
     Entorno entorno = this->entorno;
-    int *posicion_inicial = new int[2]();
-    *posicion_inicial = entorno.get_posicion_inicial();
+    std::vector<int> posicion_inicial = entorno.get_posicion_inicial();
+    
     std::cout << "Punto de partida: Fila => " << ( posicion_inicial[0] + 1 ); 
     std::cout << " :: Columna => " << posicion_inicial[1] << std::endl << std::endl;
     for(int i = 0; i < entorno.get_mapa().size(); i++){
