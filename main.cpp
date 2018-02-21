@@ -8,5 +8,7 @@ int main( int argc, const char* argv[] ){
     c_general.get_controlador_entorno().pintar_entorno();
     c_general.jugar();
 
+    std::cout << "Hi";
+
     return 0;
 };
