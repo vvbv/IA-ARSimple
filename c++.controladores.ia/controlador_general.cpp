@@ -81,7 +81,7 @@ void Controlador_general::jugar(){
             posicion_actual[1] = posicion_actual[0] + 1;
         }
         std::cout << posicion_actual[0] << " - "  << posicion_actual[1] << " =>" << accion << " Valor " << informacion_pos[4] << std::endl;
-        usleep(2 * 1000);
+        
         informacion_pos = this->get_controlador_entorno().get_informacion_entorno_pos( posicion_actual );
         
     }
